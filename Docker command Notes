@@ -1,0 +1,174 @@
+Docker commands 
+
+Docker is a powerful tool for creating, deploying, and running applications using containers. Below is a comprehensive list of commonly used Docker commands, along with explanations and examples.
+
+Basic Docker Commands
+docker --version
+
+Check the Docker version installed on your system.
+docker --version
+docker info
+
+Display system-wide information about Docker.
+docker info
+docker help
+
+Get a list of available Docker commands or detailed help for a specific command.
+docker help
+docker help run
+Container Lifecycle Management
+docker run
+
+Create and start a new container.
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+docker run -d -p 80:80 nginx
+docker ps
+
+List running containers.
+docker ps
+docker ps -a
+
+List all containers, including stopped ones.
+docker ps -a
+docker stop
+
+Stop one or more running containers.
+docker stop CONTAINER_ID
+docker start
+
+Start one or more stopped containers.
+docker start CONTAINER_ID
+docker restart
+
+Restart one or more containers.
+docker restart CONTAINER_ID
+docker rm
+
+Remove one or more stopped containers.
+docker rm CONTAINER_ID
+docker kill
+
+Kill one or more running containers.
+docker kill CONTAINER_ID
+Image Management
+docker pull
+
+Download an image from a Docker registry.
+docker pull IMAGE_NAME
+docker pull nginx
+docker images
+
+List all images on the local system.
+docker images
+docker rmi
+
+Remove one or more images.
+docker rmi IMAGE_ID
+docker build
+
+Build an image from a Dockerfile.
+docker build [OPTIONS] PATH | URL | -
+docker build -t my_image .
+docker tag
+
+Create a tag for an image.
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+docker tag my_image:latest my_repo/my_image:v1
+docker push
+
+Upload an image to a Docker registry.
+docker push IMAGE_NAME
+docker push my_repo/my_image:v1
+Container Management
+docker exec
+
+Run a command in a running container.
+docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+docker exec -it CONTAINER_ID /bin/bash
+docker logs
+
+Fetch the logs of a container.
+docker logs [OPTIONS] CONTAINER
+docker logs CONTAINER_ID
+docker inspect
+
+Return low-level information about a container or image.
+docker inspect CONTAINER_ID
+docker cp
+
+Copy files/folders between a container and the local filesystem.
+docker cp CONTAINER:SRC_PATH DEST_PATH
+docker cp DEST_PATH SRC_PATH CONTAINER:DEST_PATH
+docker diff
+
+Inspect changes to files or directories on a container’s filesystem.
+docker diff CONTAINER_ID
+Networking
+docker network ls
+
+List all networks.
+docker network ls
+docker network create
+
+Create a new network.
+docker network create NETWORK_NAME
+docker network rm
+
+Remove one or more networks.
+docker network rm NETWORK_NAME
+docker network inspect
+
+Display detailed information about one or more networks.
+docker network inspect NETWORK_NAME
+docker network connect
+
+Connect a container to a network.
+docker network connect NETWORK_NAME CONTAINER_NAME
+docker network disconnect
+
+Disconnect a container from a network.
+docker network disconnect NETWORK_NAME CONTAINER_NAME
+Volumes
+docker volume ls
+
+List all volumes.
+docker volume ls
+docker volume create
+
+Create a new volume.
+docker volume create VOLUME_NAME
+docker volume rm
+
+Remove one or more volumes.
+docker volume rm VOLUME_NAME
+docker volume inspect
+
+Display detailed information about one or more volumes.
+docker volume inspect VOLUME_NAME
+Docker Compose
+docker-compose up
+
+Build, create, start, and attach to containers for a service.
+docker-compose up
+docker-compose down
+
+Stop and remove containers, networks, images, and volumes.
+docker-compose down
+docker-compose build
+
+Build or rebuild services.
+docker-compose build
+docker-compose logs
+
+View output from containers.
+docker-compose logs
+docker-compose ps
+
+List containers.
+docker-compose ps
+docker-compose exec
+
+Execute a command in a running container.
+docker-compose exec SERVICE_NAME COMMAND
+
+By mastering these Docker commands, can effectively manage containers, images, networks, and volumes, as well as automate complex workflows with Docker Compose.
